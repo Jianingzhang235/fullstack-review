@@ -11,9 +11,9 @@ module.exports = {
   module : {
     loaders : [
       {
-        test : /\.jsx?/,
+        test: /\.(js|jsx)$/,
         include : SRC_DIR,
-        loader : 'babel-loader',      
+        loader : 'babel-loader',
         query: {
           presets: ['react', 'es2015']
         }

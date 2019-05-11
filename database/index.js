@@ -1,9 +1,16 @@
+
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher');
+//example: https: //github.com/microsoft/vscode.git
+  let repoSchema = mongoose.Schema({
+    username: String, //
+    html
+    repoId:Number,//a user could have 0 or more repos, repoId would be the index
+    stargazers_count: Number,
+    reponame: String
+  });
 
-let repoSchema = mongoose.Schema({
-  // TODO: your schema here!
-});
 
 let Repo = mongoose.model('Repo', repoSchema);
 
