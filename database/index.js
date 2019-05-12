@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/fetcher');
 //example: https: //github.com/microsoft/vscode.git
   let repoSchema = mongoose.Schema({
     username: String, //
-    html
+    html_url: String,
     repoId:Number,//a user could have 0 or more repos, repoId would be the index
     stargazers_count: Number,
     reponame: String
