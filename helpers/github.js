@@ -15,6 +15,16 @@ let getReposByUsername = (username, callback) => {
     }
   };
 
-}
+  request(options, function(err, res, data) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log(typeof data);
+      callback(JSON.parse(data));//JSON.parse(data);
+    }
+
+  });
+
+};
 
 module.exports.getReposByUsername = getReposByUsername;

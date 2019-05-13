@@ -17,28 +17,26 @@ class App extends React.Component {
   search (term) {
     console.log(`${term} was searched`);
        $.ajax({
-         url: '',
+         url: 'http://localhost:1128/repos',
          method: 'POST',
+         contentType: 'application/json',
          data: term,
          success: function (data) {
-           console.log(results, 'get req from client successfully')
+           console.log('a', data);
            //setState
-           this.setState({
-             repos: results
-           });
+          //  this.setState({
+          //    repos: results
+          //  });
          },
-         context: this,
          error: function (results) {
-           console.log('error in Get req from client')
+           console.log('error in Post req from client')
          }
-       })
-
-    // TODO
+       });
   }
    getRepos () {
 
       $.ajax({
-        url: '',
+        url: 'http://localhost:1128/repos',
         method: 'GET',
         success: function(results) {
           console.log(results, 'get req from client successfully')
